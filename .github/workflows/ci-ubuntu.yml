@@ -87,12 +87,7 @@ jobs:
         with:
           ghc-version: ${{ env.GHC_VERSION }}
           cabal-version: ${{ env.CABAL_VERSION }}
-
-      - name: Put cabal programs in PATH
-        run: echo "~/.cabal/bin" >> $GITHUB_PATH
-
-      - name: Cabal update
-        run: cabal update
+          cabal-update: true
 
       - name: Download and install Agda from github
         if: steps.cache-cabal.outputs.cache-hit != 'true'
