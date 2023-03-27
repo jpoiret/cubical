@@ -33,6 +33,7 @@ on:
 ########################################################################
 
 env:
+  AGDA_BRANCH: v2.6.3
   GHC_VERSION: 8.6.5
   CABAL_VERSION: 3.2.0.0
   CABAL_INSTALL: cabal install --overwrite-policy=always --ghc-options='-O1 +RTS -M6G -RTS'
@@ -41,18 +42,6 @@ jobs:
   test-cubical:
     runs-on: ubuntu-latest
     steps:
-
-      ########################################################################
-      ## SETTINGS
-      ##
-      ## AGDA_BRANCH picks the branch of Agda to use to build the library.
-      ########################################################################
-
-      - name: Initialise variables
-        run: |
-          # Pick Agda version
-          echo "AGDA_BRANCH=v2.6.3" >> $GITHUB_ENV
-
 
       ########################################################################
       ## CHECKOUT
